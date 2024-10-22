@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 수정</title>
+    <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+    <header>
+        <h1>게시물 수정</h1>
+        <button id="backBtn">뒤로 가기</button>
+    </header>
+
+    <section id="editSection">
+        <form id="editForm">
+            <!-- 미디어 수정 섹션 -->
+            <div class="full-width">
+                <label for="fileInput">미디어 수정:</label>
+                <input type="file" id="fileInput" multiple accept="image/*,video/*">
+                <div id="mediaPreview" class="media-preview">
+                    <!-- 기존 미디어 미리보기 및 삭제 기능 -->
+                </div>
+            </div>
+
+            <!-- 품번 입력 -->
+            <div class="half-width">
+                <label for="productNumber">품번:</label>
+                <input type="text" id="productNumber" required>
+            </div>
+
+            <!-- 종류 선택 -->
+            <div class="half-width">
+                <label for="type">종류:</label>
+                <select id="type" required>
+                    <option value="14K">14K</option>
+                    <option value="18K">18K</option>
+                    <option value="24K">24K</option>
+                    <option value="925">925</option>
+                </select>
+            </div>
+
+            <!-- 사이즈 입력 -->
+            <div class="half-width">
+                <label for="size">사이즈:</label>
+                <input type="number" id="size" step="0.01" required>
+                <select id="sizeUnit" required>
+                    <option value="cm">cm</option>
+                    <option value="호">호</option>
+                </select>
+            </div>
+
+            <!-- 중량 입력 -->
+            <div class="half-width">
+                <label for="weight">중량:</label>
+                <input type="number" id="weight" step="0.01" required>
+                <span>g</span>
+            </div>
+
+            <!-- 추가 내용 입력 -->
+            <div class="full-width">
+                <label for="additionalContent">추가 내용:</label>
+                <textarea id="additionalContent" rows="4"></textarea>
+            </div>
+
+            <!-- 수정 완료 및 게시물 삭제 버튼 -->
+            <button type="submit" id="submitBtn">수정 완료</button>
+            <button type="button" id="deleteBtn">게시물 삭제</button>
+        </form>
+    </section>
+
+    <script src="firebase.js" type="module"></script>
+    <script src="edit.js" type="module"></script>
+</body>
+</html>

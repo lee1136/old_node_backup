@@ -1,0 +1,180 @@
+/* 기본 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 회원가입 페이지 섹션 스타일 */
+#registerSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+/* 회원 목록 (데스크탑에서는 왼쪽) */
+.user-list {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-right: 20px; /* 데스크탑에서의 간격 */
+    max-height: 400px;
+    overflow-y: auto; /* 스크롤 가능 */
+}
+
+.user-list h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.user-list p {
+    margin: 0;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* 역할 선택 창 및 버튼 스타일 조정 */
+.updateRoleBtn, .deleteUserBtn, .role-select {
+    padding: 5px 8px;  /* 버튼 크기 줄이기 */
+    font-size: 12px;    /* 텍스트 크기 줄이기 */
+    margin-right: 5px;  /* 간격 좁게 */
+    margin-top: 5px;    /* 간격 추가 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* 역할 선택 창 너비 조정 (2분의 1 크기) */
+.role-select {
+    width: 50%; /* 역할 선택 창 너비를 절반으로 축소 */
+}
+
+/* 역할 수정 버튼 스타일 */
+.updateRoleBtn {
+    background-color: #f9a825;
+    color: white;
+    width: 70px;
+}
+
+.updateRoleBtn:hover {
+    background-color: #f57f17;
+}
+
+/* 탈퇴 버튼 스타일 */
+.deleteUserBtn {
+    background-color: #d32f2f;
+    color: white;
+    width: 70px;
+}
+
+.deleteUserBtn:hover {
+    background-color: #b71c1c;
+}
+
+/* 회원가입 폼 (중앙에 배치) */
+.form-container {
+    flex: 2;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* 폼 레이아웃 */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: left;
+}
+
+input, select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    border-color: #0047ab;
+    box-shadow: 0 0 5px rgba(0, 71, 171, 0.5);
+}
+
+button {
+    background-color: #0047ab;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #003580;
+    transform: scale(1.05);
+}
+
+/* 모바일에서 회원 목록을 폼 아래로 배치 */
+@media (max-width: 768px) {
+    #registerSection {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-list {
+        order: 2;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+        border-right: none;
+        border-top: 2px solid #ccc;
+        max-height: 200px;
+    }
+
+    .form-container {
+        order: 1;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    input, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

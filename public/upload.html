@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 업로드</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <header>
+        <h1>게시물 업로드</h1>
+        <button id="backBtn">뒤로 가기</button>
+    </header>
+
+    <section id="uploadSection">
+        <form id="uploadForm">
+            <!-- 미디어 미리보기 -->
+            <div id="mediaPreview" class="media-preview">
+                <!-- 미리보기가 여기에 표시됩니다 -->
+            </div>
+
+            <!-- 파일 선택 필드 -->
+            <div class="full-width">
+                <label for="fileInput">파일 선택:</label>
+                <input type="file" id="fileInput" multiple accept="image/*,video/*">
+            </div>
+
+            <!-- 회사명 및 품번 필드 한 줄에 배치 -->
+            <div class="half-width">
+                <label for="companyName">회사명(영문):</label>
+                <input type="text" id="companyName" placeholder="영문">
+            </div>
+
+            <div class="half-width">
+                <label for="productNumber">품번:</label>
+                <input type="text" id="productNumber" placeholder="품번" required>
+            </div>
+
+            <!-- 종류 필드 -->
+            <div class="half-width">
+                <label for="type">종류:</label>
+                <select id="type" required>
+                    <option value="14K">14K</option>
+                    <option value="18K">18K</option>
+                    <option value="24K">24K</option>
+                    <option value="925">925</option>
+                </select>
+            </div>
+
+            <!-- 사이즈 필드 추가 -->
+            <div class="half-width">
+                <label for="size">사이즈:</label>
+                <input type="number" id="size" step="0.01" placeholder="사이즈" >
+                <select id="sizeUnit">
+                    <option value="cm">cm</option>
+                    <option value="호">호</option>
+                </select>
+            </div>
+
+            <!-- 중량 필드 -->
+            <div class="half-width">
+                <label for="weight">중량:</label>
+                <input type="number" id="weight" step="0.01" required>
+                <span>g</span> <!-- g 단위 표시 -->
+            </div>
+
+            <!-- 추가 내용 필드 -->
+            <div class="full-width">
+                <label for="additionalContent">추가 내용:</label>
+                <textarea id="additionalContent" rows="4"></textarea>
+            </div>
+
+            <!-- 업로드 버튼 -->
+            <div class="full-width">
+                <button type="submit" id="submitBtn">업로드</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- 로딩창 추가 -->
+<div id="loadingOverlay" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p>업로드 중...</p>
+</div>
+
+    <script src="firebase.js" type="module"></script>
+    <script src="upload.js" type="module"></script>
+</body>
+</html>

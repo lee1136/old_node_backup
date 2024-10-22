@@ -1,0 +1,149 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #0047ab;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 20px;
+    transition: color 0.3s ease;
+}
+
+/* 검색창 스타일 */
+#searchInput {
+    flex-grow: 2;
+    max-width: 300px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #0047ab;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003580;
+}
+
+#buttonContainer {
+    display: flex;
+    gap: 10px;
+}
+
+#uploadBtn, #signupBtn {
+    flex: 1;
+}
+
+#logoutBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+}
+
+#logoutBtn:hover {
+    background-color: #cc0000;
+}
+
+/* 게시물 목록 스타일 */
+#postList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 모바일에서 가로 2개 */
+    grid-gap: 10px;  /* 게시물 사이 간격 */
+    padding: 20px;
+}
+
+/* 게시물 스타일 */
+.post {
+    position: relative;
+    cursor: pointer;
+    padding-top: 100%;  /* 정사각형 유지 */
+    background-color: #f1f1f1;
+    overflow: hidden;
+    transition: transform 0.3s ease, border 0.3s ease;  /* 부드러운 애니메이션 추가 */
+    border: 2px solid transparent; /* 기본 테두리 없음 */
+}
+
+.post img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post:hover {
+    transform: scale(1.05);  /* 마우스 오버 시 확대 효과 */
+    border: 2px solid #0047ab;  /* 로얄 블루 색상으로 테두리 강조 */
+}
+
+/* 반응형 게시물 리스트 */
+@media (min-width: 768px) {
+    #postList {
+        grid-template-columns: repeat(3, 1fr);  /* 중간 크기에서 3개 */
+    }
+}
+
+@media (min-width: 1200px) {
+    #postList {
+        grid-template-columns: repeat(6, 1fr);  /* 큰 화면에서 6개 */
+    }
+}
+
+/* 반응형 레이아웃 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #searchInput {
+        margin: 10px 0;
+    }
+
+    /* 모바일에서 버튼들을 가로로 배치 */
+    #buttonContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #uploadBtn, #signupBtn {
+        flex: 1;
+        width: 100%; /* 버튼들을 전체 넓이에 맞춰줌 */
+    }
+
+    #logoutBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}

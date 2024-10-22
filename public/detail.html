@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 상세 정보</title>
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+    <header>
+        <h1 id="productNumber">No. 품번</h1>
+        <div class="button-container">
+            <button id="backBtn">뒤로 가기</button>
+            <button id="editBtn" style="display: none;">수정하기</button> <!-- 관리자만 표시 -->
+        </div>
+    </header>
+
+    <section id="postDetail">
+        <!-- 게시물 상세 정보가 여기에 표시됩니다 -->
+    </section>
+
+    <!-- 모달 이미지 뷰어 -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="firebase.js" type="module"></script>
+    <script src="detail.js" type="module"></script>
+</body>
+</html>
